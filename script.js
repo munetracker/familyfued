@@ -53,6 +53,9 @@ var app = {
   makeQuestion: function(qNum){
     var qText  = app.questions[qNum]
     var qAnswr = app.allData[qText]
+    console.clear();
+    console.log("Question - ", qText);
+    console.log("answer - ", qAnswr);
 
     var qNum = qAnswr.length
         qNum = (qNum<8)? 8: qNum;
