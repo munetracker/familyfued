@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Family Feud</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style.css">
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Choose FamFued Version</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 </head>
 <body>
-<!-- partial:index.partial.html -->
-
-<!-- partial -->
-  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'></script><script  src="./script.js"></script>
-
+	<br/><br/><br/>
+	<div class="container">
+		<ul id="dynamicList"></ul>
+    </div>
+    <script>
+        const links = [
+            { href: './familyfued.html?file=edgar', text: 'familyfued' },
+            { href: './familyfued.html?file=FF3', text: 'old familyfued' }
+        ];
+        const ul = document.getElementById('dynamicList');
+        links.forEach(link => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = link.href;
+            a.textContent = link.text;
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+    </script>
 </body>
 </html>

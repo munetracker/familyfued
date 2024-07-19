@@ -2,7 +2,8 @@ var app = {
   version: 1,
   currentQ: 0,
   // jsonFile:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/40041/FF3.json",
-  jsonFile:"./FF3.json",
+  // jsonFile:"./FF3.json",
+  jsonFile:json_file,
   board: $("<div class='gameBoard'>"+
            
              "<!--- Scores --->"+
@@ -31,13 +32,15 @@ var app = {
            "</div>"),
   // Utility functions
   shuffle: function(array){
-    var currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+    if(file != 'edgar'){
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
     }
     return array;
   },
